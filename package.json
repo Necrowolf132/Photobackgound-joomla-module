@@ -1,0 +1,37 @@
+{
+  "name": "necroland-module-photobackgound-jommla",
+  "version": "1.0.0",
+  "description": "Super current Photobackgound section module for joomla based on bootstrap 4",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Necrowolf132/Photobackgound-loomla-module.git"
+  },
+  "keywords": [
+    "joomla",
+    "module",
+    "frontend",
+    "bootstrap"
+  ],
+  "author": "Jese Brito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Necrowolf132/Photobackgound-loomla-module/issues"
+  },
+  "homepage": "http://www.creacionesjesebrito.com.ve",
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-zip": "^4.2.0",
+    "postcss-flexboxfixer": "0.0.5"
+  },
+  "dependencies": {}
+}

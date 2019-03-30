@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Photobackgound</name>
+    <author>Jese Brito</author>
+    <version>0.0.1</version>
+    <description>Un simple modulo de prueba para describir una seccion.</description>
+    <files>
+        <filename>mod_mymodule.xml</filename>
+        <filename module="mod_mymodule">mod_mymodule.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <folder>sql</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="campo-editables"
+                        type="sql"
+                        defaul=""
+                        label="Edite los campos"
+                        query="SELECT id, campo FROM #__mod_mymodule"
+                        key_field="id"
+                        value_field="campo"
+                        required = "false"
+                        header = "Por favor seleccione su opción"
+                />
+                <field
+                        name="primer-content"
+                        type="text"
+                        default=""
+                        label="Contenido"
+                        showon="campo-editables:1"
+                />
+                <field
+                        name="segundo-content"
+                        type="text"
+                        default=""
+                        label="Contenido"
+                        showon="campo-editables:2"
+                />
+            </fieldset>
+        </fields>
+    </config>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/mysql/install.mysql.utf8.sql</file>
+            <file driver="sqlazure" charset="utf8">sql/sqlazure/install.sqlazure.utf8.sql</file>
+        </sql>
+    </install>
+
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/mysql/uninstall.mysql.utf8.sql</file>
+            <file driver="sqlazure" charset="utf8">sql/sqlazure/uninstall.sqlazure.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/mysql/updates</schemapath>
+            <schemapath type="sqlazure">sql/sqlazure/updates</schemapath>
+        </schemas>
+    </update>
+</extension>
