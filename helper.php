@@ -9,6 +9,9 @@ class ModMymoduleHelper
      * @access public
      *
      */
+    public static function cotejarDatas(){
+        $tablaModulo = self::getTable();
+    }
     public static function getTable($nombreFilePHP ='Mymodule' , $PrefijoClase = 'Table', $debolucion = array()) {
         return JTable::getInstance($nombreFilePHP,$PrefijoClase,$debolucion);
     }
