@@ -7,7 +7,11 @@ class ModMymoduleHelper
      * @param   EL array $params es un objeto contenido en el modulo de parametros
      *
      * @access public
+     *
      */
+    public static function getTable($nombreFilePHP ='Mymodule' , $PrefijoClase = 'Table', $debolucion = array()) {
+        return JTable::getInstance($nombreFilePHP,$PrefijoClase,$debolucion);
+    }
     public static function getSaludo($db, $params)
     {
 // Armo el Query
@@ -22,12 +26,22 @@ class ModMymoduleHelper
 //esto me debuelve todos los objetivos de la tabla
         $result = $db->loadRowList();
 // Return the Hello
+        $appJese  = JFactory::getApplication()->input;
+        $mostarParametros = $appJese->getTemplate(true)->params;
+        $mostrarmodulo = JModuleHelper::getModule('mod_mymodule');
+        $tablaModulo = self::getTable();
+        $mostrarInfotabla = $tablaModulo->getFields();
 
-        array_push($result, $params->set('campo-editables', '2'));
+        array_push($result, $params);
+        array_push($result, $mostarParametros);
+        array_push($result, $mostrarmodulo);
+        array_push($result, $appJese->get("primer-content"));
+        array_push($result, $mostrarInfotabla);
         return $result;
     }
 
-    public static function guardarNuevo($db, $params){
+    public static function guardarNuevo($db, $params)
+    {
 
         $query = $db->getQuery(true);
         $guardar = $params->get('primer-content', 'Basio', 'String');
@@ -46,6 +60,6 @@ class ModMymoduleHelper
         $db->setQuery($query);
 
         $result = $db->execute();
-        echo $result;
+        //echo $result;
     }
 }

@@ -64,7 +64,8 @@ gulp.task('zip', function() {
       '**/*',
       '!node_modules/**',
       '!dist/**',
-      '!./module_I_Necroland.zip'
+      '!./module_I_Necroland.zip',
+      '!.git/**'
       ])
       .pipe(zip('module_I_Necroland.zip'))
       .pipe(gulp.dest('./'));

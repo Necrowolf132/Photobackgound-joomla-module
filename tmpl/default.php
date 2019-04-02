@@ -2,7 +2,7 @@
 // restriccion de acceso
 defined('_JEXEC') or die; ?>
 <!--muestra de datos-->
-<header class="masthead" styles="<?php          ?>">
+<header class="masthead" >
     <div class="container">
         <div class="intro-text">
             <div class="intro-lead-in"><?php echo $holajese[1][1] ?></div>

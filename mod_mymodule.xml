@@ -14,8 +14,15 @@
         <folder>sql</folder>
     </files>
     <config>
-        <fields name="params">
+        <fields name="params" addfieldpath="/modules/mod_mymodule/tmpl/fields">
             <fieldset name="basic">
+                <field name="myfileimg"
+                       type="file"
+                       label="Cargar imagen"
+                       description="Tamaño maximo de imagnes 100KB"
+                       size="10"
+                       accept="image/*"
+                />
                 <field
                         name="campo-editables"
                         type="sql"
@@ -25,7 +32,7 @@
                         key_field="id"
                         value_field="campo"
                         required = "false"
-                        header = "Por favor seleccione su opción"
+                        header = "Por favor selIeccione su opción"
                 />
                 <field
                         name="primer-content"
@@ -40,6 +47,21 @@
                         default=""
                         label="Contenido"
                         showon="campo-editables:2"
+                />
+            </fieldset>
+            <fieldset name='campos2' label='Opciones Photobackgound'>
+                <field
+                        name="my-especial"
+                        type="campofondo"
+                        label="Campo de Fondo Backgound"
+                        description="Campo de Fondo Backgound, imagen"
+                />
+                <field name="myfileimg"
+                       type="file"
+                       label="Cargar imagen"
+                       description="Tamaño maximo de imagnes 100KB"
+                       size="10"
+                       accept="image/*"
                 />
             </fieldset>
         </fields>
