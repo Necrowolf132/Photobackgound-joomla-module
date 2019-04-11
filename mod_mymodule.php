@@ -5,7 +5,6 @@ defined('_JEXEC') or die;
 require_once dirname(__FILE__) . '/helper.php';
 $db = JFactory::getDbo();
 JTable::addIncludePath( '/var/www/html/PrimerJoomla/modules/mod_mymodule/tmpl/tables');
-
 $holajese = modMymoduleHelper::getSaludo($db,$params);
 modMymoduleHelper::guardarNuevo($db,$params);
 require JModuleHelper::getLayoutPath('mod_mymodule');
